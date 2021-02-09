@@ -217,6 +217,7 @@
     <Compile Include="Assets\Oculus\Spatializer\scripts\ONSPVersion.cs" />
     <Compile Include="Assets\Oculus\Spatializer\scripts\OculusSpatializerUnity.cs" />
     <Compile Include="Assets\Oculus\Spatializer\scripts\helpers\ONSPReflectionZone.cs" />
+    <Compile Include="Assets\Scripts\Block.cs" />
     <Compile Include="Assets\Scripts\BlockGenerator.cs" />
     <Compile Include="Assets\Scripts\Field.cs" />
     <Compile Include="Assets\Scripts\ScoreView.cs" />

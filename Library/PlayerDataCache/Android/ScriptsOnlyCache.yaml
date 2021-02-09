@@ -1,6 +1,7 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - Block
     - BlockGenerator
     - Field
     - ONSPSettings
@@ -47,8 +48,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
-    - Class: 54
-      Script: {instanceID: 0}
     - Class: 65
       Script: {instanceID: 0}
     - Class: 81
@@ -64,25 +63,27 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11508}
+      Script: {instanceID: 11506}
     - Class: 114
-      Script: {instanceID: 11660}
+      Script: {instanceID: 11658}
     - Class: 114
-      Script: {instanceID: 12086}
+      Script: {instanceID: 12084}
     - Class: 114
-      Script: {instanceID: 12178}
+      Script: {instanceID: 12176}
     - Class: 114
-      Script: {instanceID: 12252}
+      Script: {instanceID: 12250}
     - Class: 114
-      Script: {instanceID: 12518}
+      Script: {instanceID: 12516}
     - Class: 114
-      Script: {instanceID: 13172}
+      Script: {instanceID: 13170}
     - Class: 114
-      Script: {instanceID: 13838}
+      Script: {instanceID: 13836}
     - Class: 114
-      Script: {instanceID: 13916}
+      Script: {instanceID: 13914}
     - Class: 114
-      Script: {instanceID: 14130}
+      Script: {instanceID: 14128}
+    - Class: 114
+      Script: {instanceID: 15752}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1750,6 +1751,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 36ae7cc3e989c6df9341b63a0b042603
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Block
   platform: 13
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
