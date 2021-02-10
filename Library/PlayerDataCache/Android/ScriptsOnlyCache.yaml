@@ -21,6 +21,8 @@ ScriptsOnlyBuild:
     Unity.XR.Management.dll:
     - UnityEngine.XR.Management.XRGeneralSettings
     - UnityEngine.XR.Management.XRManagerSettings
+    Unity.XR.Oculus.Editor.dll:
+    - Unity.XR.Oculus.Editor.OculusSettingsEditor
     Unity.XR.Oculus.dll:
     - Unity.XR.Oculus.OculusLoader
     - Unity.XR.Oculus.OculusSettings
@@ -63,27 +65,27 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11506}
+      Script: {instanceID: 11508}
     - Class: 114
-      Script: {instanceID: 11658}
+      Script: {instanceID: 11660}
     - Class: 114
-      Script: {instanceID: 12084}
+      Script: {instanceID: 12086}
     - Class: 114
-      Script: {instanceID: 12176}
+      Script: {instanceID: 12178}
     - Class: 114
-      Script: {instanceID: 12250}
+      Script: {instanceID: 12252}
     - Class: 114
-      Script: {instanceID: 12516}
+      Script: {instanceID: 12518}
     - Class: 114
-      Script: {instanceID: 13170}
+      Script: {instanceID: 13172}
     - Class: 114
-      Script: {instanceID: 13836}
+      Script: {instanceID: 13270}
     - Class: 114
-      Script: {instanceID: 13914}
+      Script: {instanceID: 13840}
     - Class: 114
-      Script: {instanceID: 14128}
+      Script: {instanceID: 13918}
     - Class: 114
-      Script: {instanceID: 15752}
+      Script: {instanceID: 14132}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1129,7 +1131,7 @@ ScriptsOnlyBuild:
     className: TouchController
   - hash:
       serializedVersion: 2
-      Hash: 0d85145811e1a1bbec1a612ed3ec8abf
+      Hash: 95385c201a208cb9d6e83f7dde7b3498
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Field
@@ -1187,6 +1189,12 @@ ScriptsOnlyBuild:
     assemblyName: Oculus.Platform.dll
     namespaceName: Oculus.Platform.Samples.VrBoardGame
     className: EyeCamera
+  - hash:
+      serializedVersion: 2
+      Hash: 36ae7cc3e989c6df9341b63a0b042603
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Block
   - hash:
       serializedVersion: 2
       Hash: 9e5b79eaffb4a828a08c59fb1d2f2d1a
@@ -1751,12 +1759,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
-  - hash:
-      serializedVersion: 2
-      Hash: 36ae7cc3e989c6df9341b63a0b042603
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Block
   platform: 13
   scenePathNames:
   - Assets/Scenes/SampleScene.unity

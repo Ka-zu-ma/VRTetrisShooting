@@ -94,6 +94,7 @@ public class BlockGenerator : MonoBehaviour
         int size = blockTypes[typeNum].shape.GetLength(0);
 
         GameObject blockUnits = new GameObject("BlockUnits");
+        blockUnits.tag = "blockUnits";
         // 物理演算を適用させるためRigidbodyを追加
         blockUnits.AddComponent<Rigidbody>();
         // 二次元配列をループで処理
