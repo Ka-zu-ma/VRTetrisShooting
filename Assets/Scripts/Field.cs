@@ -9,7 +9,7 @@ public class Field : MonoBehaviour
 
 	[SerializeField] GameObject scoreViewObj;
 
-	public List<GameObject> blockList;
+	[SerializeField] List<GameObject> blockList;
 
 	// Start is called before the first frame update
 	void Start()
@@ -20,7 +20,22 @@ public class Field : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-
+		switch (GameStatus.status)
+		{
+			case "Shot":
+				break;
+			case "Wait":
+				break;
+			case "Fall":
+				if ( !FallBlocks() )
+				{
+					GameStatus.status = "Shot";
+					Debug.Log("Fallの中通った");
+				}
+				break;
+			case "Delete":
+				break;
+		}
 	}
 	void InitBlocks()
 	{
@@ -47,9 +62,13 @@ public class Field : MonoBehaviour
 
 	void OnCollisionEnter(Collision other)
 	{
+		Debug.Log("OnCollisionEnterの中通った");
 		if (other.gameObject.tag != "blockUnits")
 			return;
 
+		GameStatus.status = "Fall";
+
+		// 以下略
 		var b = other.gameObject.transform.position;
 		var u = 0.1f;
 		var g = new Vector3(
@@ -127,6 +146,7 @@ public class Field : MonoBehaviour
 	//ブロックを登録する関数
 	void ApplyBlockUnits(GameObject target, int x, int y)
 	{
+		// 落下させるブロックリストを初期化
 		blockList = new List<GameObject>();
 		for (int i = 0; i < target.transform.childCount; i++)
 		{
@@ -134,14 +154,8 @@ public class Field : MonoBehaviour
 			int bx = (int)(g.x * 10);
 			int by = (int)(g.y * 10);
 			blocks[x + bx, y + by] = true;
-
-			//判定用の座標を設定
-			target.transform.GetChild(i).GetComponent<Block>().x = x + bx;
-			target.transform.GetChild(i).GetComponent<Block>().y = y + by;
-
 			//参照できるように名前を設定
 			target.transform.GetChild(i).name = $"name:{x + bx},{y + by}";
-
 			//落下用ゲームオブジェクトに設定
 			blockList.Add(target.transform.GetChild(i).gameObject);
 		}
@@ -161,6 +175,50 @@ public class Field : MonoBehaviour
 				}
 			}
 		}
+	}
 
+
+	// ブロックを一段だけ落下させる処理
+	bool FallBlocks()
+	{
+		Debug.Log("FallBlocks中遠った");
+		var retblocks = blocks.Clone() as bool[,];
+		// ソート
+		SortBlockList();
+
+		// ブロックが落とせる状態にあるかチェック
+		bool isFall = true;
+
+		// 一個下にブロックがあるかチェック
+		foreach (GameObject go in blockList)
+		{
+			int x = go.GetComponent<Block>().x;
+			int y = go.GetComponent<Block>().y;
+			if (y - 1 < 0 || retblocks[x, y - 1])
+			{
+				isFall = false;
+				break;
+			}
+			retblocks[x, y] = false;
+		}
+
+		if (isFall)
+		{
+			// ブロックを配置
+			foreach (GameObject go in blockList)
+			{
+				int x = go.GetComponent<Block>().x;
+				int y = go.GetComponent<Block>().y;
+				go.transform.position += Vector3.down * 0.1f;
+
+				blocks[x, y] = false;
+				blocks[x, y - 1] = true;
+
+				go.GetComponent<Block>().y -= 1;
+				go.name = $"name:{x},{y - 1}";
+			}
+		}
+
+		return isFall;
 	}
 }

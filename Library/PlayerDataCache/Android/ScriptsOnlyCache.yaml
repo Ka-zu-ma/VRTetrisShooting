@@ -21,8 +21,6 @@ ScriptsOnlyBuild:
     Unity.XR.Management.dll:
     - UnityEngine.XR.Management.XRGeneralSettings
     - UnityEngine.XR.Management.XRManagerSettings
-    Unity.XR.Oculus.Editor.dll:
-    - Unity.XR.Oculus.Editor.OculusSettingsEditor
     Unity.XR.Oculus.dll:
     - Unity.XR.Oculus.OculusLoader
     - Unity.XR.Oculus.OculusSettings
@@ -54,6 +52,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 89
+      Script: {instanceID: 0}
     - Class: 90
       Script: {instanceID: 0}
     - Class: 95
@@ -65,27 +65,27 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11508}
+      Script: {instanceID: 11506}
     - Class: 114
-      Script: {instanceID: 11660}
+      Script: {instanceID: 11658}
     - Class: 114
-      Script: {instanceID: 12086}
+      Script: {instanceID: 12084}
     - Class: 114
-      Script: {instanceID: 12178}
+      Script: {instanceID: 12176}
     - Class: 114
-      Script: {instanceID: 12252}
+      Script: {instanceID: 12250}
     - Class: 114
-      Script: {instanceID: 12518}
+      Script: {instanceID: 12514}
     - Class: 114
-      Script: {instanceID: 13172}
+      Script: {instanceID: 13170}
     - Class: 114
-      Script: {instanceID: 13270}
+      Script: {instanceID: 13268}
     - Class: 114
-      Script: {instanceID: 13840}
+      Script: {instanceID: 13838}
     - Class: 114
-      Script: {instanceID: 13918}
+      Script: {instanceID: 13916}
     - Class: 114
-      Script: {instanceID: 14132}
+      Script: {instanceID: 14130}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1245,7 +1245,7 @@ ScriptsOnlyBuild:
     className: ButtonTriggerZone
   - hash:
       serializedVersion: 2
-      Hash: 783f593b9380cf72d0f7ebfd4a0d4bcd
+      Hash: f64fd37da5cb89243ec68b5026d70bb8
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: InputField

@@ -29,10 +29,22 @@ public class BlockGenerator : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {//A/Xボタンを押したらブロックを発射
-        if (OVRInput.GetDown(OVRInput.Button.One, controller))
+    {
+        switch (GameStatus.status)
         {
-            Fire(transform.position, transform.forward, CreateBlock(Random.Range(0, 7)));
+            case "Shot":
+                //A/Xボタンを押したらブロックを発射
+                if (OVRInput.GetDown(OVRInput.Button.One, controller))
+                {
+                    Fire(transform.position, transform.forward, CreateBlock(Random.Range(0, 7)));
+                }
+                break;
+            case "Wait":
+                break;
+            case "Fall":
+                break;
+            case "Delete":
+                break;
         }
     }
 
@@ -45,6 +57,8 @@ public class BlockGenerator : MonoBehaviour
         target.transform.position = startPos;
         //ブロックをコントローラ正面方向に放つ
         target.GetComponent<Rigidbody>().AddForce(direction * 10f, ForceMode.Impulse);
+        //状態を「Wait」に変更
+        GameStatus.status = "Wait";
     }
 
     // ブロックの種類を定義
